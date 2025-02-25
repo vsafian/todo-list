@@ -1,0 +1,7 @@
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="d-flex justify-content-center">
+    <input type="submit" value="Yes" class="btn btn-danger mr-2">
+    <a class="btn btn-secondary" href="{% url 'app:task-list' %}">Back to home</a>
+  </div>
+</form>

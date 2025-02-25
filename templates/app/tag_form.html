@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+  <h1>{{ object|yesno:"Update, Add new" }} tag</h1>
+  <hr>
+  {% include 'includes/form.html' %}
+  {% if tag %}
+    <div class="mt-2">
+      <a href="{% url 'app:tag-list' %}" class="btn btn-secondary">
+        < Back to Tags
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}
