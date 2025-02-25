@@ -14,15 +14,14 @@ class TagForm(forms.ModelForm):
 class TaskForm(forms.ModelForm):
     deadline = forms.DateTimeField(
         widget=forms.DateTimeInput(
-            attrs={'type': 'datetime-local'},
-            format='%Y-%m-%dT%H:%M'
+            attrs={"type": "datetime-local"}, format="%Y-%m-%dT%H:%M"
         ),
-        required=False
+        required=False,
     )
     tags = forms.ModelMultipleChoiceField(
-        queryset=Tag.objects.all(),
-        widget=forms.CheckboxSelectMultiple()
+        queryset=Tag.objects.all(), widget=forms.CheckboxSelectMultiple()
     )
+
     class Meta:
         model = Task
         fields = ["content", "deadline", "tags"]

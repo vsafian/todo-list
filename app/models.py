@@ -13,10 +13,10 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(blank=True, null=True)
     status = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag, related_name='tasks')
+    tags = models.ManyToManyField(Tag, related_name="tasks")
 
     class Meta:
-        ordering = ['status', '-created_at']
+        ordering = ["status", "-created_at"]
 
     def __str__(self):
         return f"#{self.id}"
@@ -27,10 +27,7 @@ class Task(models.Model):
 
     @property
     def status_str(self):
-        variables = {
-            True: 'Done',
-            False: 'Not done'
-        }
+        variables = {True: "Done", False: "Not done"}
         return variables[self.status]
 
     @property
