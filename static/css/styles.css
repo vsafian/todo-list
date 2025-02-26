@@ -1,0 +1,70 @@
+body {
+    margin-top: 20px;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.align-items-baseline {
+    align-items: baseline !important;
+}
+
+.m-5 {
+    margin: 3rem !important;
+}
+
+.admin-sidebar{
+    max-width: 13%;
+}
+
+.h3 {
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+    margin: 20px 0 10px;
+}
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+
+.mr-2 {
+    margin-right: 0.5rem !important;
+}

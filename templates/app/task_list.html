@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>TODO list</h1>
+    <div>
+      <a href="{% url 'app:task-create' %}" class="btn btn-primary">Add task</a>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    {% for task in task_list %}
+      <div>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex">
+            <h3><strong>{{ task.content }}</strong>&ensp;</h3>
+            <p class="h3 {{ task.is_done|yesno:"text-success,text-danger" }}">{{ task.status_str }}</p>
+          </div>
+          <a class="btn {{ task.is_done|yesno:"btn-secondary,btn-success" }}"
+             href="{% url 'app:task-change-status' pk=task.id %}">
+            {{ task.is_done|yesno:"Undo,Complete" }}
+          </a>
+        </div>
+        <div class="d-flex align-items-center">
+          <p>Created: {{ task.created_at }}</p>&ensp;
+          {% if task.deadline %}
+            <p class="text-danger">Deadline: {{ task.deadline }}</p>
+          {% endif %}
+        </div>
+        <div class="d-flex align-items-center">
+          <h4 class="text-secondary">Tags:&nbsp;{{ task.tags_str }}&nbsp;</h4>
+          <a class="link-to-page" href="{% url 'app:task-update' pk=task.id %}">Update</a>&nbsp;
+          <a class="link-to-page" href="{% url 'app:task-delete' pk=task.id %}">Delete</a>
+        </div>
+        <hr>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
